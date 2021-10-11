@@ -1,0 +1,77 @@
+.App {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+.hand-icon-container {
+	padding: 1rem;
+	margin: 1rem;
+	border-radius: 0.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.inc {
+	transform: scale(1.5);
+	padding: 1rem;
+	margin: 1rem;
+	border-radius: 0.5rem;
+}
+
+.rule-list {
+	margin: 1rem;
+	padding: 1rem;
+	background-color: white;
+	border-radius: 1rem;
+	list-style: disc;
+	font-weight: bold;
+	max-width: 800px;
+}
+
+.rule-list li {
+	margin: 1rem;
+}
+
+.rule-list li img {
+	margin: 1rem;
+}
+
+.compare-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-content: center;
+	align-items: center;
+	padding-top: 5rem;
+}
+.compare-container div {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.picker-container {
+	padding-top: 5rem;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.scoreboard {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.scoreboard p {
+	font-size: 2rem;
+	font-weight: bold;
+	color: #6b7280;
+}

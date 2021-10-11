@@ -5,12 +5,18 @@ import App from "./App";
 import { store } from "./app/store";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
+import { BrowserRouter as Router } from "react-router-dom";
+import { ToastProvider } from "react-toast-notifications";
 
 ReactDOM.render(
 	<React.StrictMode>
-		<Provider store={store}>
-			<App />
-		</Provider>
+		<Router>
+			<ToastProvider>
+				<Provider store={store}>
+					<App />
+				</Provider>
+			</ToastProvider>
+		</Router>
 	</React.StrictMode>,
 	document.getElementById("root")
 );
