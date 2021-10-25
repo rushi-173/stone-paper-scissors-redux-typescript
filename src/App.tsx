@@ -23,7 +23,7 @@ function App() {
 	useEffect(() => {
 		(async function () {
 			const userDataFromLocalStorageData: any = JSON.parse(
-				localStorage.getItem("spsUser") || ""
+				localStorage.getItem("spsUser") || "{}"
 			);
 			if (userDataFromLocalStorageData.token) {
 				setupAuthExceptionHandler(dispatch, logout, navigate, addToast);
