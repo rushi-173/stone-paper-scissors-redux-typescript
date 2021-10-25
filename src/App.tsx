@@ -21,17 +21,15 @@ function App() {
 	const user = useAppSelector((state) => state.user);
 
 	useEffect(() => {
-		(async function () {
-			const userDataFromLocalStorageData: any = JSON.parse(
-				localStorage.getItem("spsUser") || "{}"
-			);
-			if (userDataFromLocalStorageData.token) {
-				setupAuthExceptionHandler(dispatch, logout, navigate, addToast);
-				await dispatch(fetchUserData(userDataFromLocalStorageData.token));
-			} else {
-				navigate("signin");
-			}
-		})();
+		const userDataFromLocalStorageData: any = JSON.parse(
+			localStorage.getItem("spsUser") || "{}"
+		);
+		if (userDataFromLocalStorageData.token) {
+			setupAuthExceptionHandler(dispatch, logout, navigate, addToast);
+			dispatch(fetchUserData(userDataFromLocalStorageData.token));
+		} else {
+			navigate("signin");
+		}
 	}, [dispatch, addToast, navigate]);
 
 	const PrivateRoute = ({ path, element }) => {
