@@ -3,19 +3,19 @@ import { useNavigate, Link } from "react-router-dom";
 import "./../styles/Navbar.css";
 import { logout } from "../features/user/userSlice";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
-function Navbar() {
+function Navbar(): JSX.Element {
 	const user = useAppSelector((state) => state.user);
 	const navigate = useNavigate();
 
-	const [hamburgerStyles, setHamburgerStyles] = useState(
+	const [hamburgerStyles, setHamburgerStyles] = useState<string>(
 		"hamburger-menu pointer"
 	);
-	const [menuStyles, setMenuStyles] = useState("menu hide-menu");
+	const [menuStyles, setMenuStyles] = useState<string>("menu hide-menu");
 
 	const dispatch = useAppDispatch();
 
 	const handleLogout = () => {
-		localStorage.removeItem("user");
+		localStorage.removeItem("spsUser");
 		dispatch(logout());
 		navigate("/signin");
 	};

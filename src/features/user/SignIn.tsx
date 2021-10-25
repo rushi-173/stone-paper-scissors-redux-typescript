@@ -12,6 +12,7 @@ function SignIn() {
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
 	const { addToast } = useToasts();
+	const [loading, setLoading] = useState(true);
 	// const [status, setStatus] = useState('idle');
 	const [formValues, setFormValues] = useState({
 		email: "",
@@ -20,6 +21,8 @@ function SignIn() {
 	useEffect(() => {
 		if (user.loggedInUser) {
 			navigate("/");
+		} else {
+			setLoading(false);
 		}
 	}, [user, navigate]);
 
@@ -43,7 +46,9 @@ function SignIn() {
 		});
 	};
 
-	return (
+	return loading ? (
+		<Loader type="TailSpin" color="#51c84d" height={50} width={50} />
+	) : (
 		<div className="Login container-center">
 			<div
 				className="container-center container-column login-form-container"

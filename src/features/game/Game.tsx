@@ -4,10 +4,10 @@ import Compare from "./Compare";
 import { useAppSelector } from "../../app/hooks";
 import { Link } from "react-router-dom";
 import { useAppDispatch } from "./../../app/hooks";
-import { endGame, resetGame } from "./gameSlice";
-import { addResult, fetchResultsData } from "../result/resultSlice";
+import { resetGame } from "./gameSlice";
+import { addResult } from "../result/resultSlice";
 
-function Game() {
+function Game(): JSX.Element {
 	const { score, turn, compScore } = useAppSelector((state) => state.game);
 	const { loggedInUser } = useAppSelector((state) => state.user);
 	const game = useAppSelector((state) => state.game);
@@ -24,8 +24,7 @@ function Game() {
 	};
 
 	useEffect(() => {
-		return () => {
-			dispatch(resetGame());
+		if (turn > 5) {
 			loggedInUser &&
 				dispatch(
 					addResult({
@@ -34,6 +33,11 @@ function Game() {
 						token: loggedInUser.token,
 					})
 				);
+		}
+	}, [dispatch, turn, score, compScore, loggedInUser]);
+	useEffect(() => {
+		return () => {
+			dispatch(resetGame());
 		};
 	}, [dispatch]);
 	return (

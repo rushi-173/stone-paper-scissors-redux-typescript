@@ -15,7 +15,7 @@ function Home() {
 				</li>
 				<li>
 					- Winning criteria is as follows - <br />
-					<img src={rulesImg} alt="rules" />
+					<img src={rulesImg} alt="rules" className="rules" />
 				</li>
 				<li>
 					- Once you select your choice for the turn then you can not change it.

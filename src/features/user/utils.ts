@@ -10,13 +10,6 @@ export const saveUserDataToLocalStorage = (user, token) => {
 	);
 };
 
-// export const setupAuthHeaderForServiceCalls = (token) => {
-// 	if (token) {
-// 		return (axios.defaults.headers.common["Authorization"] = token);
-// 	}
-// 	delete axios.defaults.headers.common["Authorization"];
-// };
-
 export const setupAuthExceptionHandler = (
 	dispatch,
 	signOutUser,

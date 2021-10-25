@@ -1,7 +1,6 @@
-import React from "react";
 import FOF from "../assets/images/404.png";
 
-function PageNotFound() {
+function PageNotFound(): JSX.Element {
 	return (
 		<div className="container-column">
 			<img

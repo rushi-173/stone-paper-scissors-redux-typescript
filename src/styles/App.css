@@ -75,3 +75,7 @@
 	font-weight: bold;
 	color: #6b7280;
 }
+.rules {
+	max-width: 100%;
+	margin: 0.2rem;
+}

@@ -32,7 +32,7 @@ function App() {
 				navigate("signin");
 			}
 		})();
-	}, [dispatch]);
+	}, [dispatch, addToast, navigate]);
 
 	const PrivateRoute = ({ path, element }) => {
 		if (user.loggedInUser) {
